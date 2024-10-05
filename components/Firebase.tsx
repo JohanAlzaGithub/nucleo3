@@ -7,7 +7,8 @@ const firebaseConfig = {
   projectId: "nucleo3-5d679",
   storageBucket: "nucleo3-5d679.appspot.com",
   messagingSenderId: "786175088071",
-  appId: "1:786175088071:web:705b04170c8169e4a7b5e2"
+  appId: "1:786175088071:web:705b04170c8169e4a7b5e2",
+  databaseURL: "https://nucleo3-5d679-default-rtdb.firebaseio.com/"
 };
 
 
