@@ -60,7 +60,7 @@ export const RegistroScreen = () => {
   }
 
   return (
-    <View style={styles.container}>
+    <View style={styles.centrado}>
       <Text style={styles.text}>Registro</Text>
       <TextInput 
         style={styles.inputs}

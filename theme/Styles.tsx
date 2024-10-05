@@ -4,7 +4,7 @@ export const styles = StyleSheet.create({
 
     container: {
         flex: 1,
-        marginTop: 75,
+        marginTop: 10,
         paddingHorizontal: 20,
     },
     text: {
@@ -66,7 +66,7 @@ export const styles = StyleSheet.create({
         
     },
     iconInfo:{
-        marginLeft:225
+        alignItems:'flex-end'
     },
     iconPlus:{
         alignItems:'center',
@@ -98,5 +98,17 @@ export const styles = StyleSheet.create({
     textNombre: {
         color: '#a04000',
     },
+    centrado:{
+        justifyContent:'center',
+        flex: 1,
+        paddingHorizontal: 20,
+    },
+    botones:{
+        gap:10
+    },
+    iconLogout:{
+        alignItems:'center',
+        marginTop:10
+    }
 
 })

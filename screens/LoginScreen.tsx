@@ -52,7 +52,7 @@ export const LoginScreen = () => {
     };
 
     return (
-        <View style={styles.container}>
+        <View style={styles.centrado}>
             <Text style={styles.text}>Login</Text>
             <TextInput
                 style={styles.inputs}

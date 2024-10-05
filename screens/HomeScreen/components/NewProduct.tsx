@@ -2,6 +2,8 @@ import React, { useState } from 'react'
 import { Modal, View, Button, Text, TextInput, Alert } from 'react-native'
 import { styles } from '../../../theme/Styles'
 import { getDatabase, push, ref, set } from "firebase/database";
+import { getAuth } from 'firebase/auth';
+import app from '../../../components/Firebase';
 
 
 //interfce
@@ -49,8 +51,9 @@ export const NewProduct = ({ ShowModalProduct, setShowModalProfile }: Props) => 
             return;
         }
         //referencia
+        const auth=getAuth(app)
         const db = getDatabase();
-        const dbRef = ref(db, 'VJ')
+        const dbRef = ref(db, 'VJ/'+auth.currentUser?.uid)
         //crer colecicion
         const saveVideoJuego = push(dbRef)
         //almacenar datos
@@ -59,7 +62,7 @@ export const NewProduct = ({ ShowModalProduct, setShowModalProfile }: Props) => 
             Alert.alert("Exito","Video Juego Guardado")
             setShowModalProfile(false)
         } catch (e) {
-
+            console.log(e)
             Alert.alert("Error","Error al guardar")
         }
     }
@@ -106,7 +109,6 @@ export const NewProduct = ({ ShowModalProduct, setShowModalProfile }: Props) => 
                 <TextInput
                     placeholder='Descripción'
                     style={styles.inputs}
-                    keyboardType='numeric'
                     numberOfLines={3}
                     multiline
                     onChangeText={(value) => handleValue('descripcion', value)}
